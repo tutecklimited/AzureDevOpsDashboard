@@ -8,7 +8,7 @@ interface ConnectionSetupProps {
 }
 
 const ConnectionSetup: React.FC<ConnectionSetupProps> = ({ onConnect, isConnecting, error }) => {
-  const [personalAccessToken, setPersonalAccessToken] = useState(process.env.PAT_AZUREDEVOPS);
+  const [personalAccessToken, setPersonalAccessToken] = useState(import.meta.env.VITE_PAT_AZUREDEVOPS || '');
   const [showToken, setShowToken] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {

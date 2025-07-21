@@ -35,7 +35,7 @@ const App: React.FC = () => {
     try {
       const config: AzureDevOpsConfig = {
         organizationUrl: 'https://dev.azure.com/NSSO-V1',
-        username: process.env.USERNAME_AZUREDEVOPS,
+        username: import.meta.env.VITE_USERNAME_AZUREDEVOPS || '',
         personalAccessToken: personalAccessToken
       };
 
